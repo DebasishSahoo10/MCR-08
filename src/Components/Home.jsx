@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export const Home = () => {
   const { state } = useContext(DataContext);
-  const [typeFilter, setTypeFilter] = useState("Online")
+  const [typeFilter, setTypeFilter] = useState("Both")
   const [searchKeys, setSearchKeys] = useState("")
   const filteredState = state.meetups.filter(meet => (typeFilter==="Both" ? true : meet.eventType==typeFilter) && meet.title.toLowerCase().includes(searchKeys.toLowerCase()))
   return (
